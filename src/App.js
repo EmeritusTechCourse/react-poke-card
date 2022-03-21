@@ -2,31 +2,71 @@ import './App.css';
 import React from 'react';
 import PokeCardFront from './components/pokeCardFront'
 import PokeCardBack from './components/pokeCardBack';
-const { useEffect, useState } = React;
+import PokeSideBar from './components/pokeSideBar';
+const { useEffect, useState, useContext } = React;
 
+export const AppData = React.createContext();
 
 function App() {
-  
-  const [curPokemon, setcurPokemon] = useState({}) //Poke Data
-  const [searchUrl, setSearchUrl] = useState("1")
+
+  const [curPokemon, setcurPokemon] = useState(); //Poke Data
+  const [curPokemonArray, setCurPokemonArray] = useState([])
+  const [showFront, setShowFront] = useState(null);
+  // const [searchUrl, setSearchUrl] = useState("1")
   const [apiUrl] = useState(`https://pokeapi.co/api/v2/pokemon/`); // API URL
-  
+
   useEffect(() => {
     async function getFetchData(url){
-      const res = await fetch(url)
-      let data = await res.json()
-      setcurPokemon({
+      let pokemonArray = [];
+      let evolutionNames = []
+      let data = await fetchData(url)
+      const initPokemon = {
+        name: data.name,
+        sprites: data.sprites,
+        types: data.types,
+        stats: data.stats
+      }
+      let speciesData = await fetchData(data.species.url)
+      let evolutionData = await fetchData(speciesData.evolution_chain.url);
+      evolutionNames.push(evolutionData.chain.species.name)
+      recurseEvolution(evolutionData.chain.evolves_to)
+      
+      let pokemonList = await Promise.all(evolutionNames)
+      
+      
+      async function recurseEvolution(evolves_to){
+        for(let names of evolves_to){
+          evolutionNames.push(names.species.name);
+          recurseEvolution(names.evolves_to)
+        }
+        if(evolutionData.chain.evolves_to.length === 0){
+          return null;
+        }
+      }
+
+      for(let name of pokemonList){
+        if(initPokemon.name === name){
+          pokemonArray.push(initPokemon)
+        }else {
+          let data = await fetchData(apiUrl + name)
+          pokemonArray.push({
           name: data.name,
           sprites: data.sprites,
           types: data.types,
-          stats: data.stats,
-          showFront: true
-        })
+          stats: data.stats
+          })
+        }
+        let pokemonArrayFinal = await Promise.all(pokemonArray)
+      
+        setcurPokemon(initPokemon);
+        setCurPokemonArray(pokemonArrayFinal);
+        setShowFront(true);
+        
+      }
     }
     const windowUrl = window.location.search;
     const params = new URLSearchParams(windowUrl);
-    const pokeName = params.get("name") 
-    console.log(apiUrl + pokeName);
+    const pokeName = params.get("name")
     getFetchData(apiUrl + pokeName)
   }, [])
 
@@ -35,15 +75,16 @@ function App() {
       <header className="App-header">
         <h1>PokéDex</h1>
       </header>
+      {showFront !== null && <aside>
+        <AppData.Provider value={setcurPokemon}>
+          <PokeSideBar pokeData={curPokemonArray}/>
+        </AppData.Provider>
+      </aside>}
       <main>
-        {curPokemon.showFront !== null && <aside>
-          
-        </aside>}
-        {curPokemon.showFront &&  <section className='card' onClick={() => setcurPokemon({...curPokemon, showFront: false})}>
+        {showFront &&  <section className='card' onClick={() => setShowFront(false)}>
         <PokeCardFront pokeData={curPokemon}/>
         </section>}
-        
-        {curPokemon.showFront === false && <section className="card" onClick={() => setcurPokemon({...curPokemon, showFront: true})}>
+        {showFront === false && <section className="card" onClick={() => setShowFront(true)}>
         <PokeCardBack pokeData={curPokemon}/>
         </section>}
       </main>
@@ -52,5 +93,11 @@ function App() {
 }
 
 export default App;
+
+async function fetchData(url){
+  const res = await fetch(url);
+  let data = await res.json();
+  return data;
+}
 
 //isTrue? <PokeCardFront pokeData={curPokemon}/> : <PokeCardBack pokeData={curPokemon}/>
