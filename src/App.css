@@ -1,16 +1,10 @@
+body{
+  background-color: #282c34;
+  background-size: cover;
+}
+
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
 
 .App-header {
@@ -24,15 +18,24 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.card{
+  border: solid 5px black;
+  width: 325px;
+  height: 325px;
+  border-radius: 15px;
+  background-image: linear-gradient(red,white);
+  text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card h3{
+  text-transform: capitalize;
+  margin-top:25px;
+  margin-bottom: 55px;
+}
+
+.card .pokeData {
+  text-transform: capitalize;
+  text-align: center;
+  width: 100%;
+  height: 100%;
 }
