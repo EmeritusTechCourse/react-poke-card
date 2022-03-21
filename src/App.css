@@ -27,35 +27,51 @@
 }
 
 main{
-  display: flex;
-  justify-content: center;
-  align-content: center;
+  /* display: flex;
+  justify-content: space-around;
+  align-content: center; */
 }
 aside{
+  justify-self: left;
   float: left;
+  left: 0%;
+  height: 900px;
   margin: 15px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-transform: capitalize;
 }
 
+.cardContainer{
+  display: flex;
+  justify-content: center;
+}
 .card{
+  position: relative;
   border: solid 2px black;
   text-align: center;
   width: 500px;
   height: 500px;
-  margin: 30px;
   background-color: grey;
 }
 
 .card h3{
   text-transform: capitalize;
 }
+.card img{
+  display: inline-block;
+}
 
 .card ul{
   list-style-type: none;
+  display: block;
 }
 
 .type{
   display: inline-block;
-  padding: 0px;
+  padding: 10px;
+  margin: 5px;
   width: 100px;
   color: white;
   border: 5px solid black;
