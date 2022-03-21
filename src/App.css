@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
 }
 
 .App-header {
@@ -10,4 +10,108 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+main{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.card{
+  border: solid 2px black;
+  text-align: center;
+  width: 500px;
+  height: 500px;
+  margin: 30px;
+  background-color: grey;
+}
+
+.card h3{
+  text-transform: capitalize;
+}
+
+.card ul{
+  list-style-type: none;
+}
+
+.type{
+  display: inline-block;
+  padding: 0px;
+  width: 100px;
+  color: white;
+  border: 5px solid black;
+  border-radius: 20px;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.fire{
+  background-color: orangered;
+}
+
+.grass{
+  background-color: lawngreen;
+}
+
+.poison{
+  background-color: purple;
+}
+
+.water{
+  background-color: blue;
+}
+
+.normal{
+  background-color: tan;
+}
+
+.flying{
+  background-image: linear-gradient(170deg, dodgerblue 50%, lightgrey 50%);
+}
+
+.bug{
+  background-color: green;
+}
+
+.fairy{
+  background-color: hotpink;
+}
+
+.electric{
+  background-color: yellow;  
+}
+
+.ground{
+  background-image: linear-gradient(170deg, gold 50%, goldenrod 50%);
+}
+
+.psychic{
+  background-color: deeppink;
+}
+
+.fighting{
+  background-color: orange;
+}
+
+.rock{
+  background-color: slategray;
+}
+
+.ice{
+  background-color: aqua;
+}
+
+.ghost{
+  background-color: mediumpurple;
+}
+
+.dragon{
+  background-image: linear-gradient(170deg, deepskyblue 50%, crimson 50%);
+}
+
+.steel{
+  background-color: steelblue;
+}
+
+.dark{
+  background-color: darkslategray;
 }
