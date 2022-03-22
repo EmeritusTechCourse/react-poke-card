@@ -1,0 +1,198 @@
+@font-face {
+  font-family: "Nintendo DS BIOS";
+  src: url("../../public/Nintendo DS BIOS Regular.ttf")
+}
+
+body {
+  font-family: 'Nintendo DS BIOS', sans-serif;
+  background-color: #282c34;
+  color: white;
+  height: 100vh;
+  width: 100vw;
+}
+
+header, nav, footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+header {
+  font-size: 5vh;
+  height: 10vh;
+}
+
+main {
+  background-color: #505868;
+  height: 75vh;
+  display: flex;
+  overflow: auto;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.card {
+  margin-right: 3vh;
+  background: repeating-linear-gradient(135deg, grey, silver 10%, grey 20%);
+  color: black;
+  box-sizing: border-box;
+  height: 70vh;
+  width: 50vh;
+  border: 2vh solid gold;
+  border-radius: 2vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 3vh;
+  box-shadow: #0000007f 1vh 1vh 1vh ;
+  animation: FlipCard 0.5s;
+  transition: transform 1s;
+}
+
+.card:hover {
+  transform: scale(107%);
+}
+
+h2 {
+  font-size: 5vh;
+  margin: 0;
+  text-transform: capitalize;
+}
+
+.SummaryCard {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.8vh;
+}
+
+.summaryTop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.SummaryCard h2 {
+  width: 45vh;
+  margin-top: 0.5vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+.roundTypeIcon {
+  height: 5vh;
+}
+
+.summaryImg {
+  background: linear-gradient(skyblue 45%, lightgreen 55%, green);
+  box-sizing: border-box;
+  width: 44vh;
+  border: 0.5vh ridge silver;
+  border-bottom: none;
+}
+
+.summaryCaption {
+  box-sizing: border-box;
+  width: 45vh;
+  background: linear-gradient(silver, white, silver, grey);
+  border: 0.5vh ridge silver;
+  text-align: center;
+}
+
+.summaryCaption span {
+  font-size: 1.5vh;
+  padding: 0 0.5vh;
+}
+
+.flavorText {
+  width: 44.2vh;
+  text-align: justify;
+}
+
+.detailImg {
+  box-sizing: border-box;
+  width: 11vh;
+}
+
+.typeIcon {
+  height: 3vh;
+}
+
+.ability {
+  text-transform: capitalize;
+}
+
+td {
+  text-align: center;
+  text-transform: capitalize;
+}
+
+th {
+  padding: 0 1vh;
+}
+
+nav, footer {
+  font-size: 2.5vh;
+}
+
+nav {
+  height: 10vh;
+  justify-content: left;
+  overflow-x: auto;
+}
+
+.PkmnLink{
+  text-transform: capitalize;
+  padding: 1vh
+}
+
+footer {
+  height: 5vh;
+}
+
+a {
+  color: #61dafb;
+}
+
+.App-logo {
+  height: 2vh;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes FlipCard {
+  from {
+    filter: blur(1vh) brightness(0);
+  }
+  50% {
+    filter: blur(1vh) brightness(0) opacity(0.5);
+    transform: rotateY(90deg) scale(107%);
+  }
+}
+
+.EvoChain {
+  padding: 0px;
+  margin: 0px;
+}
+
+.Evolution {
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+}

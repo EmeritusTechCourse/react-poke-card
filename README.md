@@ -11,19 +11,19 @@ _Grabbing onto React hooks._
 
 Complete all the bare minimum requirements before moving on to the advanced content. This sprint gives you a substantial amount of creative freedom. We recommend that you read through all the requirements and hold a short planning session with your pair to discuss what your final product will be.
 
-- [] Renders a Pokemon Card based on the query parameters in the address bar. Do not use react-router for this assignment. [See here](https://stackoverflow.com/questions/56111914/how-to-read-url-parameters-within-component-in-react-js) for one way that you could accomplish this.
+- [x] Renders a Pokemon Card based on the query parameters in the address bar. Do not use react-router for this assignment. [See here](https://stackoverflow.com/questions/56111914/how-to-read-url-parameters-within-component-in-react-js) for one way that you could accomplish this.
 
-- [] Makes requests to the [PokeAPI](https://pokeapi.co/) to populate a Card of the Pokemon queried.
+- [x] Makes requests to the [PokeAPI](https://pokeapi.co/) to populate a Card of the Pokemon queried.
 
-- [] You can use fetch to make your api call or you may choose to incorporate a different library like [axios](https://axios-http.com/docs/intro)
+- [x] You can use fetch to make your api call or you may choose to incorporate a different library like [axios](https://axios-http.com/docs/intro)
 
-- [] Use `useEffect` and `useState` properly to establish appropriate state management.
+- [x] Use `useEffect` and `useState` properly to establish appropriate state management.
 
-- [] The pokemon card should contain the pokemon's name, sprite, and any other at a glance information that may be beneficial. Play with the [PokeAPI](https://pokeapi.co/) interface to see what type of information is available for a pokemon.
+- [x] The pokemon card should contain the pokemon's name, sprite, and any other at a glance information that may be beneficial. Play with the [PokeAPI](https://pokeapi.co/) interface to see what type of information is available for a pokemon.
 
-- [] When the card is clicked, render the 'back' of the card with a full glimpse of information about that pokemon.
+- [x] When the card is clicked, render the 'back' of the card with a full glimpse of information about that pokemon.
 
-- [] Add your own style and flair to the page. Be creative.
+- [x] Add your own style and flair to the page. Be creative.
 
 
 
@@ -35,13 +35,13 @@ Our advanced content is intended to throw you in over your head, requiring you t
 
 Feel free to experiment with other React features while tackling these. You may choose to do any or all of these in any order:
 
-- [] Implement a side bar that shows all possible evolutions of the current pokemon(ie. 'charmander', 'charmeleon', 'charizard'). 
-  - [] Each evolution should show a name and sprite as well as 
-  - [] Make a clickHandler redirecting the user to the associated page for that pokemon.
+- [x] Implement a side bar that shows all possible evolutions of the current pokemon(ie. 'charmander', 'charmeleon', 'charizard'). 
+  - [x] Each evolution should show a name and sprite as well as 
+  - [ ] Make a clickHandler redirecting the user to the associated page for that pokemon.
 
-- [] Add a navigation bar that allows the user to find other Pokemon.
-  - [] Either implement a search feature that renders results on the current page.
-  - [] Or display mini cards of randomly selected other pokemon.
+- [x] Add a navigation bar that allows the user to find other Pokemon.
+  - [ ] Either implement a search feature that renders results on the current page.
+  - [ ] Or display mini cards of randomly selected other pokemon.
 
 ## Relevant Documentation:
 
