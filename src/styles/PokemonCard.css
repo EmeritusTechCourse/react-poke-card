@@ -1,0 +1,27 @@
+.card {
+  /* background-color: aqua; */
+  /* width: 301px; */
+  background-image: url('../images/blanks-classic-cards-pokemon-trading-card-png-clipart-thumbnail.jpg');
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
+
+.card img {
+  background-image: linear-gradient(red, white);  
+}
+
+
+.container {
+  height: 100%
+
+}
+
+.sprite {
+  text-align: center;
+  width: 10%;
+  height: auto;
+  /* object-fit: scale-down;
+  background-size: cover; */
+}

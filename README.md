@@ -13,13 +13,13 @@ Complete all the bare minimum requirements before moving on to the advanced cont
 
 - [] Renders a Pokemon Card based on the query parameters in the address bar. Do not use react-router for this assignment. [See here](https://stackoverflow.com/questions/56111914/how-to-read-url-parameters-within-component-in-react-js) for one way that you could accomplish this.
 
-- [] Makes requests to the [PokeAPI](https://pokeapi.co/) to populate a Card of the Pokemon queried.
+- [X] Makes requests to the [PokeAPI](https://pokeapi.co/) to populate a Card of the Pokemon queried.
 
-- [] You can use fetch to make your api call or you may choose to incorporate a different library like [axios](https://axios-http.com/docs/intro)
+- [X] You can use fetch to make your api call or you may choose to incorporate a different library like [axios](https://axios-http.com/docs/intro)
 
-- [] Use `useEffect` and `useState` properly to establish appropriate state management.
+- [X] Use `useEffect` and `useState` properly to establish appropriate state management.
 
-- [] The pokemon card should contain the pokemon's name, sprite, and any other at a glance information that may be beneficial. Play with the [PokeAPI](https://pokeapi.co/) interface to see what type of information is available for a pokemon.
+- [X] The pokemon card should contain the pokemon's name, sprite, and any other at a glance information that may be beneficial. Play with the [PokeAPI](https://pokeapi.co/) interface to see what type of information is available for a pokemon.
 
 - [] When the card is clicked, render the 'back' of the card with a full glimpse of information about that pokemon.
 
