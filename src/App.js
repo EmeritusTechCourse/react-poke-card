@@ -11,8 +11,6 @@ function App (){
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
-    console.log(params.get('name'));
-
     const nameParam = params.get('name');
     if (nameParam) {
       fetch(`https://pokeapi.co/api/v2/pokemon/${nameParam}`)
