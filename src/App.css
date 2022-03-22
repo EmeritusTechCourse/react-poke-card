@@ -1,5 +1,6 @@
 body{
-  background-color: #282c34;
+  background-image: url("151_pokemon_wallpaper_by_drums107_ddumeg9-fullview.jpg");
+  background-repeat: no-repeat;
   background-size: cover;
 }
 
@@ -20,7 +21,7 @@ body{
 
 .card{
   justify-content: center;
-  border: solid 5px white;
+  border: solid 5px gray;
   width: 500px;
   height: 335px;
   border-radius: 15px;
@@ -41,14 +42,14 @@ body{
   margin-top:25px;
   margin-bottom: 20px;
   font-size: 50px;
-  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+  text-shadow: -1px 0 gray, 0 1px gray, 1px 0 gray, 0 -1px gray;
 }
 
 .card img {
   background-image: url('white-colored-background-free-vector.jpg');
   background-position: center;
   background-size: cover;
-  border: solid 5px white;
+  border: solid 5px gray;
   border-radius: 60px;
   margin-bottom: 55px;
 }
@@ -72,7 +73,7 @@ body{
   width: 100px;
   color: black;
   text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
-  border: 5px solid white;
+  border: 5px solid gray;
   border-radius: 15px;
 }
 
