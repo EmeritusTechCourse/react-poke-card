@@ -8,7 +8,7 @@ const PokeSideBar = ({pokeData}) => {
       {
         pokeData.map((pokemon) => {
           return (
-            <div key={pokemon.name}>
+            <div key={pokemon.name} className="pokemonItem">
               <h4 key={pokemon.name}>{pokemon.name}</h4>
               <img src={pokemon.sprites.front_default} onClick={() => setcurPokemon(pokemon)}/>
             </div>
