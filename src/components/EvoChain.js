@@ -3,9 +3,9 @@ import React, {useEffect} from 'react';
 
 export default function EvoChain ({pkmnData, speciesData, evoData}) {
 
-  const clickHandler = (name) => {
-    window.location.replace(`?pkmn=${name}`);
-  }
+  // const clickHandler = (name) => {
+  //   window.location.replace(`?pkmn=${name}`);
+  // }
 
   return  evoData[0] ?
   <div className='EvoChain'>
@@ -18,7 +18,7 @@ export default function EvoChain ({pkmnData, speciesData, evoData}) {
         <div>
           {evoData[0][0].name}
         </div>
-          <img className="detailImg" src={evoData[0][0].sprite} alt="" onClick={() => window.location.replace(`?pkmn=${evoData[0][0].name}`)}/>        
+          <img className="detailImg" src={evoData[0][0].sprite} alt="" onClick={() => window.location.replace(`?pkmn=${evoData[0][0].name.toLowerCase()}`)}/>
       </span>
     </div>
 
@@ -32,8 +32,8 @@ export default function EvoChain ({pkmnData, speciesData, evoData}) {
           <span key={pkmn.name}>
             <div>
               {pkmn.name}
-            </div>  
-            <img className="detailImg" src={pkmn.sprite} alt="" />
+            </div>
+            <img className="detailImg" src={pkmn.sprite} alt=""  onClick={() => window.location.replace(`?pkmn=${pkmn.name.toLowerCase()}`)}/>
           </span>
         ))}
       </div>
@@ -48,14 +48,14 @@ export default function EvoChain ({pkmnData, speciesData, evoData}) {
           <span key={pkmn.name}>
             <div>
               {pkmn.name}
-            </div>  
-            <img className="detailImg" src={pkmn.sprite} alt="" />
+            </div>
+            <img className="detailImg" src={pkmn.sprite} alt=""  onClick={() => window.location.replace(`?pkmn=${pkmn.name.toLowerCase()}`)}/>
           </span>
         ))}
       </div>
     </div> : <></>}
 
   </div> :
-  
+
   <></>;
 };
