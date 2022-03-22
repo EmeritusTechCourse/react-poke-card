@@ -9,12 +9,43 @@ function App() {
   const windowUrl = window.location.search;
   const params = new URLSearchParams(windowUrl);
 
+  let familyNames = []
 
   useEffect(() => {
     fetch(`https://pokeapi.co/api/v2/pokemon/${params.get('name')}`)
       .then(response => response.json())
-      .then(data => setPokemon(data))
-  }, [])
+      .then(data => setPokemon(data)) 
+      }, [])
+      
+      // useEffect(() => {
+      //   fetch(`https://pokeapi.co/api/v2/pokemon/${params.get('name')}`)
+      //     .then(response => response.json())
+      //     .then(data => fetch(data.species.url))
+      //     .then(species => species.json())
+      //     .then(speciesData => fetch(speciesData.evolution_chain.url))
+      //     .then(evolutionChain => evolutionChain.json())
+      //     .then(evolutionData => { 
+      //       familyNames.push(evolutionData.chain.species.name)
+    
+      //       function recEvo(evolutionData){
+      //         if(evolutionData.chain.evolves_to.length === 0){
+      //           return null
+      //         }
+      //         evolutionData.chain.evolves_to.forEach(name => familyNames.push(name.species.name))
+      //           recEvo(names.evolves_to)
+      //         }
+      //       }
+      //     })
+      //     console.log(familyNames)
+      //   }, [])
+    
+    
+
+  //   fetch(`https://pokeapi.co/api/v2/pokemon/${params.get('name')}`)
+  //   .then(response => response.json())
+  //   .then(data => data.) 
+
+  // }, [])
 
   return (
     (Object.keys(pokemon)).length === 0 ? <div></div> :

@@ -50,7 +50,7 @@ export default PokeCard
 /* 
 how to get evolutionary stages
 
-fetch pokpokeInformation.species.url
+fetch pokomonInformation.species.url
 data => json()
 
 prevEvolv = data.json().evolves_from_species.name
