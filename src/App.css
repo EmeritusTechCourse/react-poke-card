@@ -19,23 +19,132 @@ body{
 }
 
 .card{
-  border: solid 5px black;
-  width: 325px;
-  height: 325px;
+  justify-content: center;
+  border: solid 5px white;
+  width: 500px;
+  height: 335px;
   border-radius: 15px;
-  background-image: linear-gradient(red,white);
+  background-image: url('wave.gif');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -167.5px;
+  margin-left: -250px;
 }
 
 .card h3{
   text-transform: capitalize;
   margin-top:25px;
+  margin-bottom: 20px;
+  font-size: 50px;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+
+.card img {
+  background-image: url('white-colored-background-free-vector.jpg');
+  background-position: center;
+  background-size: cover;
+  border: solid 5px white;
+  border-radius: 60px;
   margin-bottom: 55px;
 }
 
-.card .pokeData {
+.card .pokeData{
   text-transform: capitalize;
   text-align: center;
   width: 100%;
   height: 100%;
+}
+
+.pokeData .type{
+  display: inline-block;
+  padding: 10px;
+  margin: 5px;
+}
+
+.type{
+  display: inline-block;
+  padding: 0px;
+  width: 100px;
+  color: black;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+  border: 5px solid white;
+  border-radius: 15px;
+}
+
+.fire{
+  background-color: orangered;
+}
+
+.grass{
+  background-color: lawngreen;
+}
+
+.poison{
+  background-color: purple;
+}
+
+.water{
+  background-color: blue;
+}
+
+.normal{
+  background-color: tan;
+}
+
+.flying{
+  background-image: linear-gradient(dodgerblue 50%, lightgrey 50%);
+}
+
+.bug{
+  background-color: green;
+}
+
+.fairy{
+  background-color: hotpink;
+}
+
+.electric{
+  background-color: yellow;  
+}
+
+.ground{
+  background-image: linear-gradient(gold 50%, goldenrod 50%);
+}
+
+.psychic{
+  background-color: deeppink;
+}
+
+.fighting{
+  background-color: orange;
+}
+
+
+.rock{
+  background-color: slategray;
+}
+
+.ice{
+  background-color: aqua;
+}
+
+.ghost{
+  background-color: mediumpurple;
+}
+
+.dragon{
+  background-image: linear-gradient(deepskyblue 50%, crimson 50%);
+}
+
+.steel{
+  background-color: steelblue;
+}
+
+.dark{
+  background-color: darkslategray;
 }

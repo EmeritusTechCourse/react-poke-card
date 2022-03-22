@@ -1,39 +1,30 @@
 import './App.css';
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, createContext} from 'react';
 import PokeCard from './PokeCard'
 
 
+
+export const pokemonContext = createContext(null);
+
 function App() {
-  
-  const [pokemon, setPokemon] = useState({pokeData:[]})
- //i want the used state to be an empty array 
- //then on start up, fetch the data and make its 'results' array the new pokeData array
- //then iterate through it to find the pokemon that someone searches for
- //then fetch the data of the searched pokemon
+  const [pokemon, setPokemon] = useState({})
+  const windowUrl = window.location.search;
+  const params = new URLSearchParams(windowUrl);
 
 
- useEffect(() => {
-    fetch(`https://pokeapi.co/api/v2/pokemon?limit=1&offset=0`)
-      .then(res => res.json())
-      .then(data => {
-        console.log(data);
-        console.log(data.name);
-        setPokemon({pokeData:data.results});
-      })
+  useEffect(() => {
+    fetch(`https://pokeapi.co/api/v2/pokemon/${params.get('name')}`)
+      .then(response => response.json())
+      .then(data => setPokemon(data))
   }, [])
-  
-  console.log(pokemon.pokeData.results)
-
-  //create a function that iterates throught the pokemon.pokeData array
-  // if pokemon.pokeData[i].name === to the name searched, fetch pokemon.pokeData[i].url
 
   return (
-    <div className='App'>
-     
-    </div>
-  );
+    (Object.keys(pokemon)).length === 0 ? <div></div> :
+    <pokemonContext.Provider value={pokemon}>
+      <PokeCard />
+    </pokemonContext.Provider>
+  )
 }
-
 export default App;
 
 /*
