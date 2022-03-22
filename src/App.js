@@ -1,8 +1,10 @@
-import React, { useState, useEffect, useSearchParams } from 'react'
-import './App.css';
 import PokemonCard from './Components/PokemonCard.js'
+import SearchAppBar from './Components/SearchAppBar.js'
+import React, { useState, useEffect } from 'react'
+import './App.css';
 import Grid from '@mui/material/Grid'
 import Pagination from '@mui/material/Pagination'
+
 
 function App (){
   const limit = 15;
@@ -37,6 +39,7 @@ function App (){
 
   return (
     <div className="App">
+      <SearchAppBar />
       <Grid container
             alignItems="center"
             justifyContent="center"
@@ -44,12 +47,12 @@ function App (){
             gap={1}> {
               pokemon.map( (pokemon, i) => (
                 <Grid item xs={6} sm={6} md={3} lg={2} xl={1.5} key={i}>
-                  <PokemonCard id={i} data={pokemon} />
+                  <PokemonCard id={i+limit*(page-1)+1} data={pokemon} />
                 </Grid>
               ))
             }
       </Grid>
-      <div style={{display: 'flex',  justifyContent:'center', alignItems:'center', minHeight: '5vh'}}>
+      <div className="Pagination">
         <Pagination count={Math.ceil(1126 / limit)}
                     size="large"
                     variant="outlined"

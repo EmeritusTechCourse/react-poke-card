@@ -1,5 +1,21 @@
+@import url('http://fonts.cdnfonts.com/css/pokemon-solid');
+
 .App {
   text-align: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('https://bit.ly/3NnrRHs');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.Pagination {
+  position: fixed;
+  left: 50%;
+  bottom: 0px;
+  transform: translate(-50%, -50%);
+  margin: 0 auto;
 }
 
 .App-logo {
@@ -26,6 +42,21 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.nameText{
+  font-size: 20px;
+  color: #ffcb05;
+  -webkit-text-stroke: 1px #3c5aa6;
+  font-family: 'Pokemon Solid', sans-serif;
+  letter-spacing: .12em;
+  padding-bottom: 0px;
+}
+
+.statsText{
+  list-style: none;
+  padding-left: 0;
+  font-size: 75%;
 }
 
 @keyframes App-logo-spin {
