@@ -2,8 +2,6 @@ import './App.css';
 import React, {useState, useEffect, createContext} from 'react';
 import PokeCard from './PokeCard'
 
-
-
 export const pokemonContext = createContext(null);
 
 function App() {
