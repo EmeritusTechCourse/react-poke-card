@@ -26,7 +26,8 @@ function App() {
     if(pokeName !== null){
       getFetchData(apiUrl + pokeName)
     }
-    getPokeList();
+    getPokeList()
+    search("")
 
     async function getFetchData(url){
       let data = await fetchData(url)
@@ -38,9 +39,12 @@ function App() {
     async function getPokeList(){
       let fullPkArray = await (fetchData(`https://pokeapi.co/api/v2/pokemon?limit=1126&offset=0`));
       setpokemonList(fullPkArray.results);
-      
       }
     }, [])
+
+  useEffect((() =>{
+    search("")
+  }), [pokemonList])
   
   useEffect(() => {
     fetchEvolutionData();
@@ -95,6 +99,7 @@ function App() {
     Promise.all(pokeSearch)
     .then(finalPokeSearch => setpokemonSearch(finalPokeSearch))
   }
+  
   return (
     <div className="App">
       <header className="App-header">

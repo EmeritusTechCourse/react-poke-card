@@ -1,6 +1,8 @@
 .App {
   /* text-align: center; */
   height: auto;
+  font-family: 'Press Start 2P', cursive;
+  font: 'Press Start 2P'
 }
 
 .App-header {
@@ -25,7 +27,6 @@
   padding: 20px 100px;
   border: solid 5px black;
   border-radius: 20px;
-  
 }
 
 button{
@@ -33,12 +34,13 @@ button{
   height: 50px;
   margin: 20px;
   width: 150px;
+  padding: 0 30px;
   border-radius: 15px;
   border: solid 5px black;
   text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
   display: inline-block;
-  font-size: calc(15px);
-  color: red;
+  font-size: calc(20px);
+  color: white;
 }
 
 main{
@@ -61,8 +63,8 @@ main{
 .searchGrid{
   display: grid;
   grid-template-columns: auto auto auto auto auto;
-  column-gap: 20px;
-  row-gap: 20px;
+  column-gap: 10px;
+  row-gap: 10px;
   justify-content: center;
 }
 
@@ -71,8 +73,7 @@ aside{
   justify-self: left;
   float: left;
   left: 0%;
-  height: 100%;
-  max-width: 500px;
+  height:auto;
   text-transform: capitalize;
   background-color: grey;
   padding: 10px;
@@ -82,14 +83,18 @@ aside{
 
 .pokemonItem{
   display: block;
-  width: 130px;
-  margin: 3px;
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+  font-size: 15px;
   text-align: center;
   border: 2px solid white;
   border-radius: 20px;
   color: white;
   text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
   background-color: #282c34;
+  text-transform: capitalize;
+
 }
 
 .pokemonItem h6{
@@ -106,7 +111,7 @@ aside{
   border: solid 5px grey;
   border-radius: 20px;
   text-align: center;
-  width: 300px;
+  width: 400px;
   height: 400px;
   margin: 50px 0;
   color: white;
@@ -122,8 +127,7 @@ aside{
 }
 
 .card .statsHolder{
-  width: 200px;
-  margin: 0 50px;
+  width: 400px;
 }
 .card ul{
   list-style-type: none;
@@ -133,9 +137,10 @@ aside{
 
 .type{
   display: inline-block;
+  text-transform: capitalize;
   padding: 10px;
   margin: 5px;
-  width: 100px;
+  width: 150px;
   color: white;
   border: 5px solid black;
   border-radius: 20px;
