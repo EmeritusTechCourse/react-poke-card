@@ -13,28 +13,34 @@ function App() {
   const [curPokemon, setcurPokemon] = useState(); //Poke Data
   const [curPokemonArray, setCurPokemonArray] = useState([])
   const [showFront, setShowFront] = useState(null);
-  const [searchParameter, setSearchParameter] = useState("")
   const [pokemonList, setpokemonList] = useState([])
   const [pokemonSearch, setpokemonSearch] = useState([])
-  // const [searchUrl, setSearchUrl] = useState("1")
+  const [page, setPage] = useState(1)
+
   const [apiUrl] = useState(`https://pokeapi.co/api/v2/pokemon/`); // API URL
 
   useEffect(() => {
     const windowUrl = window.location.search;
     const params = new URLSearchParams(windowUrl);
     const pokeName = params.get("name")
-    getFetchData(apiUrl + pokeName)
+    if(pokeName !== null){
+      getFetchData(apiUrl + pokeName)
+    }
+    getPokeList();
 
     async function getFetchData(url){
       let data = await fetchData(url)
       const initPokemon = await formatPokemonData(data)
-      let fullPkArray = await (fetchData(`https://pokeapi.co/api/v2/pokemon?limit=1126&offset=0`))
       setcurPokemon(initPokemon);
       setShowFront(true);
+    }
+
+    async function getPokeList(){
+      let fullPkArray = await (fetchData(`https://pokeapi.co/api/v2/pokemon?limit=1126&offset=0`));
       setpokemonList(fullPkArray.results);
       
-    }
-  }, [])
+      }
+    }, [])
   
   useEffect(() => {
     fetchEvolutionData();
@@ -69,14 +75,16 @@ function App() {
         pokemonArrayFinal = await Promise.all(pokemonArray);
         
       }
+      setpokemonSearch([])
+      setShowFront(true);
       setCurPokemonArray(pokemonArrayFinal);
     }
 
   },[curPokemon])
   
-  useEffect(() =>{
-    console.log(searchParameter);
-    console.log(pokemonList);
+  function search(searchParameter){
+    setShowFront(null)
+    setPage(1)
     let pokeSearch = []
     for(let pokemon of pokemonList) {
       if(pokemon.name.includes(searchParameter)) {
@@ -86,23 +94,23 @@ function App() {
     }
     Promise.all(pokeSearch)
     .then(finalPokeSearch => setpokemonSearch(finalPokeSearch))
-  }, [searchParameter])
-
+  }
   return (
     <div className="App">
       <header className="App-header">
         <h1>PokéDex</h1>
         <label htmlFor='search'>Search</label>
-        <input type="text" id='search'></input>
-        <button onClick={() => setSearchParameter(document.getElementById('search').value)}>Submit</button>
-
+        <input type="text" id='search' placeholder="Who's that Pokémon!?"></input>
+        <button onClick={() => search(document.getElementById('search').value)}>Submit</button>
       </header>
       <main>
-        {showFront !== null &&
-          <AppData.Provider value={setcurPokemon}>
-            <PokeTopBar pokeData={pokemonSearch}/>
-          </AppData.Provider>
-        }
+        {pokemonSearch.length > 0 && <div className='navButtons'>
+          <button type="button" onClick={() => page > 1 ? setPage(page-1) : () => {return}}>Previous</button>
+          <button type="button" onClick={() => page + 1 < (pokemonSearch.length / 25) +1 ? setPage(page+1) : () => {return}}>Next</button>
+        </div>}
+        <AppData.Provider value={setcurPokemon}>
+          <PokeTopBar pokeData={pokemonSearch} page={page}/>
+        </AppData.Provider>
         {showFront !== null && <aside>
           <AppData.Provider value={setcurPokemon}>
             <PokeSideBar pokeData={curPokemonArray}/>

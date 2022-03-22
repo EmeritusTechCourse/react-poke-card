@@ -1,5 +1,6 @@
 .App {
   /* text-align: center; */
+  height: auto;
 }
 
 .App-header {
@@ -16,6 +17,7 @@
   display: inline-block;
   margin: 20px 200px;
   color: white;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
   background-image: url(shakingpb.gif);
   background-position:center;
   background-size: cover;
@@ -23,35 +25,54 @@
   padding: 20px 100px;
   border: solid 5px black;
   border-radius: 20px;
+  
+}
+
+button{
+  background-color: grey;
+  height: 50px;
+  margin: 20px;
+  width: 150px;
+  border-radius: 15px;
+  border: solid 5px black;
   text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  display: inline-block;
+  font-size: calc(15px);
+  color: red;
 }
 
 main{
   /* display: flex;
   justify-content: space-around;
   align-content: center; */
-  height: 1000px;
+  height: auto;
 }
-.searchGrid{
+
+.navButtons{
+  display: block;
   display: flex;
-  flex-wrap: wrap;
-  align-content: space-between;
-  /* display: grid;
-  grid-template-columns: auto auto auto auto auto auto;
+  justify-content: center;
+}
+
+.navButtons button{
+  margin: 30px 300px;
+}
+
+.searchGrid{
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
   column-gap: 20px;
   row-gap: 20px;
-  justify-content: center; */
+  justify-content: center;
 }
+
 aside{
+  overflow: auto;
   justify-self: left;
   float: left;
   left: 0%;
-  width: auto;
   height: 100%;
-  /* margin: 15px; */
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+  max-width: 500px;
   text-transform: capitalize;
   background-color: grey;
   padding: 10px;
@@ -62,8 +83,13 @@ aside{
 .pokemonItem{
   display: block;
   width: 130px;
+  margin: 3px;
   text-align: center;
-  border: 2px solid black;
+  border: 2px solid white;
+  border-radius: 20px;
+  color: white;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  background-color: #282c34;
 }
 
 .pokemonItem h6{
@@ -74,14 +100,18 @@ aside{
   display: flex;
   justify-content: center;
 }
+
 .card{
   position: relative;
-  border: solid 2px black;
+  border: solid 5px grey;
+  border-radius: 20px;
   text-align: center;
-  width: 500px;
-  height: 500px;
-  background-color: grey;
+  width: 300px;
+  height: 400px;
   margin: 50px 0;
+  color: white;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  background-color: #282c34;
 }
 
 .card h3{
@@ -91,8 +121,13 @@ aside{
   display: inline-block;
 }
 
+.card .statsHolder{
+  width: 200px;
+  margin: 0 50px;
+}
 .card ul{
   list-style-type: none;
+  text-align: left;
   display: block;
 }
 
