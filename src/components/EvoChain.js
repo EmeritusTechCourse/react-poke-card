@@ -1,11 +1,7 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 
 
 export default function EvoChain ({pkmnData, speciesData, evoData}) {
-
-  // const clickHandler = (name) => {
-  //   window.location.replace(`?pkmn=${name}`);
-  // }
 
   return  evoData[0] ?
   <div className='EvoChain'>

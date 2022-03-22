@@ -21,7 +21,14 @@ export default function DetailCard({onclick, pkmnData, speciesData}) {
     </span>
     <span>
       <b>Ability: </b>
-      {pkmnData.abilities.map(a => ' ' + a.ability.name.replaceAll('-', ' ').toStartCase()) + ''}
+      {pkmnData.abilities
+        .map(a =>
+          <span className="ability"
+            key={a.ability.name}>
+              {' '+ a.ability.name.replaceAll('-', ' ')}
+          </span>
+        )
+      }
     </span>
     <table className="statsTable">
       <thead>

@@ -5,7 +5,6 @@ import EvoChain from './components/EvoChain'
 import NavBar from './components/NavBar'
 import logo from './logo.svg';
 import './css/App.css';
-import PkmnLink from './components/PkmnLink';
 
 
 // if (!params.has('pkmn')) {
@@ -60,10 +59,6 @@ export const ROUND_TYPE_ICONS = {
   shadow: ''
 }
 
-String.prototype.toStartCase = function () {
-  return this.split(' ').map(s => s[0].toUpperCase() + s.slice(1)).join(' ');
-};
-
 export const fetchJSON = url => fetch(url).then(r => r.json());
 
 export default function App() {
@@ -83,7 +78,7 @@ export default function App() {
   async function getSprite(url) {
 
     const sprite = await fetchJSON(url)
-    
+
     .then(data => {
       return fetchJSON(data.varieties[0].pokemon.url)
       .then(pdata => {
@@ -132,14 +127,14 @@ export default function App() {
                 setTimeout(() => setEvoData2(level2), 300)
                 setTimeout(() => setEvoData3(level3), 300)
               })
-              
+
             })
         });
       });
     },
     []
   );
-  
+
   return (
     <div className="App">
       <header>

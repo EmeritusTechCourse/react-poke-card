@@ -118,6 +118,10 @@ h2 {
   height: 3vh;
 }
 
+.ability {
+  text-transform: capitalize;
+}
+
 td {
   text-align: center;
   text-transform: capitalize;
@@ -133,8 +137,8 @@ nav, footer {
 
 nav {
   height: 10vh;
-  justify-content: space-evenly;
-  overflow: auto;
+  justify-content: left;
+  overflow-x: auto;
 }
 
 .PkmnLink{

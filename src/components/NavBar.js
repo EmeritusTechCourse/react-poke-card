@@ -7,7 +7,7 @@ export default function NavBar({pkmnList}, searchString) {
   if (pkmnList) return (
     <nav>
       {pkmnList
-        .filter((pkmn, i) => i < 25)
+        .filter((pkmn, i) => i < 898)
         .map(pkmn => <PkmnLink string={pkmn.name} key={pkmn.name} />)
       }
     </nav>
