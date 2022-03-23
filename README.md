@@ -21,7 +21,7 @@ Complete all the bare minimum requirements before moving on to the advanced cont
 
 - [X] The pokemon card should contain the pokemon's name, sprite, and any other at a glance information that may be beneficial. Play with the [PokeAPI](https://pokeapi.co/) interface to see what type of information is available for a pokemon.
 
-- [] When the card is clicked, render the 'back' of the card with a full glimpse of information about that pokemon.
+- [X] When the card is clicked, render the 'back' of the card with a full glimpse of information about that pokemon.
 
 - [] Add your own style and flair to the page. Be creative.
 

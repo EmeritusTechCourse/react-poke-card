@@ -22,7 +22,7 @@
 
 .name {
   width: 30%;
-  margin: auto;
+  padding-top: 2vh;
   /* margin-right: 15vh; */
 }
 
@@ -33,18 +33,33 @@
 
 .container {
   height: 100%;
-  margin-right: 20vh;
-  margin-top: 5vh;
-
+  padding-right: 0vh;
+  padding-bottom: 0vh;
+  border-radius: 20px;
 }
 
 .sprite {
   text-align: center;
   width: 65%;
   height: auto;
+  border-bottom: solid;
+  border-bottom-color: purple;
+  border-top: dashed;
+  border-top-color: red;
+  background-image: url('../images/200.gif');
   /* margin-top: 3vh;
   margin-left: 2vh;
   margin-bottom: 2vh; */
   /* object-fit: scale-down;
   background-size: cover; */
 }
+
+.details{
+  width: 200%;
+  float: left;
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+  padding-left: 1vh;
+}
+
