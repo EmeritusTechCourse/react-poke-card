@@ -1,0 +1,65 @@
+.card {
+  /* background-color: aqua; */
+  height: 425px;
+  width: 300px;
+  /* background-image: url("../images/blanks-classic-cards-pokemon-trading-card-png-clipart-thumbnail.jpg"); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-repeat: no-repeat;
+  text-align: center;
+  background-position: center;
+
+  border-style: solid;
+  border-radius: 20px;
+  border-color: #5294e2;
+  flex-direction: column;
+  /* margin: 10vh; */
+  margin-top: 20vh;
+  margin-left: 85vh;
+  margin-right: 85vh;
+}
+
+.name {
+  width: 30%;
+  padding-top: 2vh;
+  /* margin-right: 15vh; */
+}
+
+.card img {
+  /* background-image: linear-gradient(red, white); */  
+}
+
+
+.container {
+  height: 100%;
+  padding-right: 0vh;
+  padding-bottom: 0vh;
+  border-radius: 20px;
+}
+
+.sprite {
+  text-align: center;
+  width: 65%;
+  height: auto;
+  border-bottom: solid;
+  border-bottom-color: purple;
+  border-top: dashed;
+  border-top-color: red;
+  background-image: url('../images/200.gif');
+  /* margin-top: 3vh;
+  margin-left: 2vh;
+  margin-bottom: 2vh; */
+  /* object-fit: scale-down;
+  background-size: cover; */
+}
+
+.details{
+  width: 200%;
+  float: left;
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+  padding-left: 1vh;
+}
+

@@ -1,25 +1,33 @@
-import logo from './logo.svg';
+import React, { useState, useEffect, createContext } from 'react';
 import './App.css';
+import PokemonCard from './components/PokemonCard.js';
+
+// const windowUrl = window.location.search;
+// if ("?name=" not in windowUrl) {
+//   throw new Error("Use required format")
+// } else {
+// const params = new URLSearchParams(windowUrl);
+// }
+// const params = new URLSearchParams(windowUrl);
+export const pokeDataContext = createContext(null)
 
 function App() {
+  const [pokeData, setPokeData] = useState({});
+  const windowUrl = window.location.search;
+  const params = new URLSearchParams(windowUrl);
+
+  useEffect(() => {
+    fetch(`https://pokeapi.co/api/v2/pokemon/${params.get('name')}`)
+    .then(response => response.json())
+    .then(data => setPokeData(data))
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    (Object.keys(pokeData)).length === 0 ? <div></div> :
+    <pokeDataContext.Provider value={pokeData}>
+      <PokemonCard />
+    </pokeDataContext.Provider>
+  )
 }
 
 export default App;
